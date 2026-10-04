@@ -1,6 +1,4 @@
-# Latihan — Tarif Laundry
-
-## Kelompok
+# Latihan Individu — Tarif Laundry
 
 * **Daffa Dermawan** (1124160177)
 
