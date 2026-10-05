@@ -121,8 +121,6 @@ Tarif Laundry
     └── Total tarif
 ```
 
-Jadi di sini kami tidak langsung membuat semua kode sekaligus, melainkan membagi masalah menjadi beberapa bagian kecil.
-
 ---
 
 ### 7. Pattern Recognition
@@ -196,7 +194,6 @@ Rp21.000 + Rp10.500
 
 ### 8. Abstraction
 
-Pada latihan ini kami menggunakan `enum` untuk membatasi pilihan jenis layanan.
 
 ```dart
 enum Layanan {
@@ -205,7 +202,7 @@ enum Layanan {
 }
 ```
 
-Dengan menggunakan `enum`, pilihan layanan hanya dapat berupa:
+Dengan menggunakan `enum`, pilihan layanan menjadi berupa:
 
 ```text
 Layanan.reguler
@@ -304,31 +301,21 @@ String hitungLaundry(
   double berat,
   Layanan layanan,
 ) {
-  // BR-02
-  // Jika berat di bawah 2 kg,
-  // maka tetap dihitung sebagai 2 kg
   if (berat < 2) {
     berat = 2;
   }
 
-  // BR-01
-  // Tarif Rp7.000 per kg
   double tarifDasar = berat * 7000;
 
-  // Nilai awal tambahan express
   double tambahanExpress = 0;
 
-  // BR-03
   if (layanan == Layanan.express) {
     tambahanExpress = tarifDasar * 0.50;
   }
 
-  // Total tarif
   double totalTarif = tarifDasar + tambahanExpress;
 
-  return 'Berat: $berat kg | '
-      'Layanan: ${layanan.name} | '
-      'Total: Rp${totalTarif.toStringAsFixed(0)}';
+  return 'Berat: $berat kg | Layanan: ${layanan.name} | Total: Rp${totalTarif.toStringAsFixed(0)}';
 }
 ```
 
